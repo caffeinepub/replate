@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('/assets/fonts/Outfit[wght].woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* RePlate — Fresh Green + Warm Orange on clean white */
+    --background: 0.985 0.004 95;
+    --foreground: 0.15 0.025 50;
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.025 50;
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.025 50;
+
+    /* Primary: Vibrant green */
+    --primary: 0.56 0.19 142;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: Warm orange */
+    --secondary: 0.72 0.18 55;
+    --secondary-foreground: 0.99 0 0;
+
+    --muted: 0.94 0.008 100;
+    --muted-foreground: 0.52 0.02 80;
+
+    /* Accent: soft green tint */
+    --accent: 0.93 0.04 145;
+    --accent-foreground: 0.25 0.12 142;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.88 0.012 100;
+    --input: 0.92 0.01 100;
+    --ring: 0.56 0.19 142;
+
+    /* Chart colors */
+    --chart-1: 0.56 0.19 142;
+    --chart-2: 0.72 0.18 55;
+    --chart-3: 0.52 0.18 262;
+    --chart-4: 0.60 0.17 22;
+    --chart-5: 0.62 0.15 192;
+
+    /* Sidebar */
+    --sidebar: 0.14 0.035 145;
+    --sidebar-foreground: 0.92 0.015 100;
+    --sidebar-primary: 0.62 0.19 142;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.22 0.045 145;
+    --sidebar-accent-foreground: 0.92 0.015 100;
+    --sidebar-border: 0.25 0.05 145;
+    --sidebar-ring: 0.62 0.19 142;
+  }
+
+  .dark {
+    --background: 0.10 0.018 145;
+    --foreground: 0.94 0.01 100;
+    --card: 0.13 0.022 145;
+    --card-foreground: 0.94 0.01 100;
+    --popover: 0.13 0.022 145;
+    --popover-foreground: 0.94 0.01 100;
+
+    --primary: 0.62 0.20 142;
+    --primary-foreground: 0.10 0.02 145;
+
+    --secondary: 0.72 0.18 55;
+    --secondary-foreground: 0.10 0.02 50;
+
+    --muted: 0.18 0.025 145;
+    --muted-foreground: 0.62 0.02 100;
+
+    --accent: 0.20 0.04 142;
+    --accent-foreground: 0.72 0.14 142;
+
+    --destructive: 0.52 0.22 25;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.22 0.03 145;
+    --input: 0.20 0.03 145;
+    --ring: 0.62 0.20 142;
+
+    --chart-1: 0.62 0.20 142;
+    --chart-2: 0.72 0.18 55;
+    --chart-3: 0.62 0.18 262;
+    --chart-4: 0.65 0.17 22;
+    --chart-5: 0.65 0.15 192;
+
+    --sidebar: 0.09 0.018 145;
+    --sidebar-foreground: 0.92 0.015 100;
+    --sidebar-primary: 0.62 0.19 142;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.16 0.035 145;
+    --sidebar-accent-foreground: 0.92 0.015 100;
+    --sidebar-border: 0.20 0.04 145;
+    --sidebar-ring: 0.62 0.19 142;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Status pill badges */
+  .badge-available {
+    background-color: oklch(0.92 0.08 142);
+    color: oklch(0.28 0.14 142);
+  }
+  .badge-claimed {
+    background-color: oklch(0.93 0.09 70);
+    color: oklch(0.38 0.18 60);
+  }
+  .badge-completed {
+    background-color: oklch(0.91 0.07 262);
+    color: oklch(0.35 0.16 262);
+  }
+  .badge-expired {
+    background-color: oklch(0.93 0.04 50);
+    color: oklch(0.42 0.06 50);
+  }
+  .badge-open {
+    background-color: oklch(0.92 0.08 142);
+    color: oklch(0.28 0.14 142);
+  }
+  .badge-fulfilled {
+    background-color: oklch(0.91 0.07 262);
+    color: oklch(0.35 0.16 262);
+  }
+  .badge-cancelled {
+    background-color: oklch(0.93 0.04 50);
+    color: oklch(0.42 0.06 50);
+  }
+
+  /* Urgency badges */
+  .badge-critical {
+    background-color: oklch(0.94 0.07 22);
+    color: oklch(0.40 0.22 22);
+  }
+  .badge-high {
+    background-color: oklch(0.94 0.10 55);
+    color: oklch(0.42 0.18 55);
+  }
+  .badge-medium {
+    background-color: oklch(0.94 0.09 80);
+    color: oklch(0.44 0.14 78);
+  }
+  .badge-low {
+    background-color: oklch(0.92 0.08 142);
+    color: oklch(0.28 0.14 142);
+  }
+
+  /* Delivery status */
+  .badge-accepted {
+    background-color: oklch(0.92 0.06 262);
+    color: oklch(0.35 0.14 262);
+  }
+  .badge-picked_up {
+    background-color: oklch(0.94 0.10 55);
+    color: oklch(0.42 0.18 55);
+  }
+  .badge-on_the_way {
+    background-color: oklch(0.93 0.09 192);
+    color: oklch(0.35 0.16 192);
+  }
+  .badge-delivered {
+    background-color: oklch(0.92 0.08 142);
+    color: oklch(0.28 0.14 142);
+  }
+
+  /* Gradient hero mesh */
+  .hero-gradient {
+    background: radial-gradient(ellipse 80% 60% at 50% -10%, oklch(0.85 0.12 142 / 0.35), transparent),
+                radial-gradient(ellipse 60% 50% at 90% 50%, oklch(0.82 0.14 55 / 0.20), transparent),
+                radial-gradient(ellipse 70% 40% at 10% 70%, oklch(0.88 0.08 142 / 0.15), transparent);
+  }
+
+  .dark .hero-gradient {
+    background: radial-gradient(ellipse 80% 60% at 50% -10%, oklch(0.35 0.12 142 / 0.3), transparent),
+                radial-gradient(ellipse 60% 50% at 90% 50%, oklch(0.45 0.14 55 / 0.15), transparent),
+                radial-gradient(ellipse 70% 40% at 10% 70%, oklch(0.30 0.08 142 / 0.12), transparent);
+  }
+
+  /* Glass card effect */
+  .glass-card {
+    background: oklch(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(var(--border) / 0.6);
+  }
+
+  /* Section fade in */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+
+  /* Counter pulse */
+  @keyframes countUp {
+    from { transform: scale(0.9); opacity: 0.5; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .counter-animate {
+    animation: countUp 0.4s ease-out;
+  }
+}
