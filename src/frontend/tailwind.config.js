@@ -68,9 +68,10 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Bricolage Grotesque', 'system-ui', 'sans-serif'],
-        sans: ['Outfit', 'system-ui', 'sans-serif'],
-        body: ['Outfit', 'system-ui', 'sans-serif'],
+        display: ['Cabinet Grotesk', 'system-ui', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        body: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",

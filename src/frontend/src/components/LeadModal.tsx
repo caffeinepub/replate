@@ -17,13 +17,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import type { CompanySize, Lead, LeadSource, LeadStatus } from "@/data/leads";
+import type {
+  CompanySize,
+  Lead,
+  LeadSource,
+  LeadStatus,
+  TurnoverRange,
+} from "@/data/leads";
 import {
   ALL_AREAS,
   ALL_COMPANY_SIZES,
   ALL_PRODUCTS,
   ALL_SOURCES,
   ALL_STATUSES,
+  ALL_TURNOVER_RANGES,
 } from "@/data/leads";
 import { useEffect, useState } from "react";
 
@@ -37,6 +44,7 @@ const EMPTY_FORM: LeadFormData = {
   email: "",
   area: "",
   companySize: "SME",
+  turnoverCrores: "1–5 Cr",
   interestedProducts: [],
   leadStatus: "New",
   source: "Cold Call",
@@ -232,6 +240,28 @@ export default function LeadModal({
                 {ALL_COMPANY_SIZES.map((s) => (
                   <SelectItem key={s} value={s}>
                     {s}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Turnover */}
+          <div className="space-y-1">
+            <Label>Annual Turnover</Label>
+            <Select
+              value={form.turnoverCrores}
+              onValueChange={(v) =>
+                setForm((p) => ({ ...p, turnoverCrores: v as TurnoverRange }))
+              }
+            >
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {ALL_TURNOVER_RANGES.map((t) => (
+                  <SelectItem key={t} value={t}>
+                    ₹{t}
                   </SelectItem>
                 ))}
               </SelectContent>
