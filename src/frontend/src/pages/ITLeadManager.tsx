@@ -58,6 +58,7 @@ import {
   FileSpreadsheet,
   Filter,
   Grid3X3,
+  Landmark,
   Loader2,
   MapPin,
   Phone,
@@ -2465,6 +2466,1035 @@ const MUMBAI_IT_COMPANIES: {
   },
 ];
 
+// ─── Tata IT Solutions Users Data ─────────────────────────────────────────────
+const TATA_IT_USERS: {
+  companyName: string;
+  area: string;
+  services: string[];
+  industry: string;
+  address: string;
+}[] = [
+  {
+    companyName: "Reliance Industries Ltd",
+    area: "BKC, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "MS 365", "Endpoint Security"],
+    industry: "Conglomerate",
+    address: "Maker Chambers IV, 222 Nariman Point, Mumbai 400021",
+  },
+  {
+    companyName: "Tata Consultancy Services",
+    area: "Nariman Point, Mumbai",
+    services: [
+      "Internet Leased Line",
+      "MS 365",
+      "Managed WiFi",
+      "Endpoint Security",
+    ],
+    industry: "IT Services",
+    address: "TCS House, Raveline St, Fort, Mumbai 400001",
+  },
+  {
+    companyName: "Mahindra & Mahindra",
+    area: "Worli, Mumbai",
+    services: ["Internet Leased Line", "PRI Line", "SD-WAN", "Managed WiFi"],
+    industry: "Automobile",
+    address: "Mahindra Towers, Worli, Mumbai 400018",
+  },
+  {
+    companyName: "HDFC Bank Ltd",
+    area: "Lower Parel, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "MS 365", "Endpoint Security"],
+    industry: "Banking",
+    address: "HDFC Bank House, Senapati Bapat Marg, Lower Parel, Mumbai 400013",
+  },
+  {
+    companyName: "Axis Bank Ltd",
+    area: "Worli, Mumbai",
+    services: [
+      "Internet Leased Line",
+      "PRI Line",
+      "Managed WiFi",
+      "Endpoint Security",
+    ],
+    industry: "Banking",
+    address:
+      "Axis House, C-2 Wadia International Centre, Pandurang Budhkar Marg, Worli, Mumbai 400025",
+  },
+  {
+    companyName: "ICICI Bank Ltd",
+    area: "BKC, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "MS 365", "Endpoint Security"],
+    industry: "Banking",
+    address: "ICICI Bank Tower, Bandra Kurla Complex, Mumbai 400051",
+  },
+  {
+    companyName: "Larsen & Toubro Ltd",
+    area: "Powai, Mumbai",
+    services: [
+      "Internet Leased Line",
+      "SD-WAN",
+      "PRI Line",
+      "Endpoint Security",
+    ],
+    industry: "Engineering",
+    address: "L&T Technology Centre, Saki Vihar Road, Powai, Mumbai 400072",
+  },
+  {
+    companyName: "Godrej Industries",
+    area: "Vikhroli, Mumbai",
+    services: ["Internet Leased Line", "MS 365", "Managed WiFi"],
+    industry: "Conglomerate",
+    address:
+      "Godrej One, Pirojshanagar, Eastern Express Highway, Vikhroli, Mumbai 400079",
+  },
+  {
+    companyName: "Cipla Ltd",
+    area: "Worli, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "Endpoint Security"],
+    industry: "Pharma",
+    address:
+      "Cipla House, Peninsula Business Park, Ganpatrao Kadam Marg, Lower Parel, Mumbai 400013",
+  },
+  {
+    companyName: "Sun Pharmaceutical Industries",
+    area: "Andheri East, Mumbai",
+    services: [
+      "Internet Leased Line",
+      "MS 365",
+      "Managed WiFi",
+      "Endpoint Security",
+    ],
+    industry: "Pharma",
+    address:
+      "Sun House, CTS No. 201 B/1, Western Express Highway, Goregaon East, Mumbai 400063",
+  },
+  {
+    companyName: "Wipro Ltd (Mumbai Office)",
+    area: "Powai, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "MS 365"],
+    industry: "IT Services",
+    address:
+      "Wipro Ltd, Plant 10, MIDC, Marol Naka, Andheri East, Mumbai 400093",
+  },
+  {
+    companyName: "HCL Technologies (Mumbai)",
+    area: "Andheri East, Mumbai",
+    services: ["Internet Leased Line", "Managed WiFi", "Endpoint Security"],
+    industry: "IT Services",
+    address: "HCL Technologies, MIDC, Andheri East, Mumbai 400093",
+  },
+  {
+    companyName: "Kotak Mahindra Bank",
+    area: "BKC, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "MS 365", "Endpoint Security"],
+    industry: "Banking",
+    address: "27BKC, G Block, Bandra Kurla Complex, Mumbai 400051",
+  },
+  {
+    companyName: "IndusInd Bank",
+    area: "BKC, Mumbai",
+    services: ["Internet Leased Line", "PRI Line", "Managed WiFi"],
+    industry: "Banking",
+    address:
+      "8th Floor, Tower 1, One Indiabulls Centre, Jupiter Mills Compound, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013",
+  },
+  {
+    companyName: "Piramal Enterprises",
+    area: "Lower Parel, Mumbai",
+    services: ["Internet Leased Line", "MS 365", "SD-WAN"],
+    industry: "Pharma/Finance",
+    address:
+      "Piramal Ananta, Agastya Corporate Park, Opp Fire Brigade, Kamani Junction, LBS Marg, Kurla West, Mumbai 400070",
+  },
+  {
+    companyName: "Aditya Birla Group (HO)",
+    area: "Worli, Mumbai",
+    services: [
+      "Internet Leased Line",
+      "SD-WAN",
+      "Endpoint Security",
+      "PRI Line",
+    ],
+    industry: "Conglomerate",
+    address: "Aditya Birla Centre, SK Ahire Marg, Worli, Mumbai 400030",
+  },
+  {
+    companyName: "JSW Steel Ltd",
+    area: "Worli, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "MS 365"],
+    industry: "Steel/Manufacturing",
+    address: "JSW Centre, Bandra Kurla Complex, Bandra East, Mumbai 400051",
+  },
+  {
+    companyName: "Bharat Petroleum Corporation Ltd",
+    area: "Ballard Estate, Mumbai",
+    services: [
+      "Internet Leased Line",
+      "PRI Line",
+      "Managed WiFi",
+      "Endpoint Security",
+    ],
+    industry: "Oil & Gas",
+    address:
+      "Bharat Bhavan, 4 & 6 Currimbhoy Road, Ballard Estate, Mumbai 400001",
+  },
+  {
+    companyName: "Hindustan Unilever Ltd",
+    area: "Andheri East, Mumbai",
+    services: ["Internet Leased Line", "MS 365", "SD-WAN", "Endpoint Security"],
+    industry: "FMCG",
+    address:
+      "Unilever House, B D Sawant Marg, Chakala, Andheri East, Mumbai 400099",
+  },
+  {
+    companyName: "Pidilite Industries",
+    area: "Andheri East, Mumbai",
+    services: ["Internet Leased Line", "Managed WiFi", "MS 365"],
+    industry: "Chemicals",
+    address:
+      "Regent Chambers, Jamnalal Bajaj Marg, 208, Nariman Point, Mumbai 400021",
+  },
+  {
+    companyName: "CRISIL Ltd",
+    area: "Lower Parel, Mumbai",
+    services: ["Internet Leased Line", "MS 365", "Endpoint Security"],
+    industry: "Financial Services",
+    address:
+      "CRISIL House, Central Avenue, Hiranandani Business Park, Powai, Mumbai 400076",
+  },
+  {
+    companyName: "National Stock Exchange of India",
+    area: "BKC, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "Endpoint Security"],
+    industry: "Financial Exchange",
+    address:
+      "Exchange Plaza, Plot No. C/1, G Block, Bandra Kurla Complex, Mumbai 400051",
+  },
+  {
+    companyName: "Bombay Stock Exchange",
+    area: "Dalal Street, Mumbai",
+    services: [
+      "Internet Leased Line",
+      "PRI Line",
+      "MS 365",
+      "Endpoint Security",
+    ],
+    industry: "Financial Exchange",
+    address: "Phiroze Jeejeebhoy Towers, Dalal Street, Fort, Mumbai 400001",
+  },
+  {
+    companyName: "Siemens India Ltd",
+    area: "Worli, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "MS 365"],
+    industry: "Engineering/Electronics",
+    address: "Siemens House, Worli, Mumbai 400018",
+  },
+  {
+    companyName: "Abbott India Ltd",
+    area: "Thane, Mumbai",
+    services: ["Internet Leased Line", "Managed WiFi", "Endpoint Security"],
+    industry: "Pharma",
+    address:
+      "3-4/B, Godrej Memorial Drive, Eastern Express Highway, Thane West 400601",
+  },
+  {
+    companyName: "Tata Steel (Mumbai Office)",
+    area: "Fort, Mumbai",
+    services: ["Internet Leased Line", "MS 365", "SD-WAN"],
+    industry: "Steel",
+    address:
+      "Bombay House, 24 Homi Mody St, Hutatma Chowk, Fort, Mumbai 400001",
+  },
+  {
+    companyName: "HDFC Life Insurance",
+    area: "Lower Parel, Mumbai",
+    services: [
+      "Internet Leased Line",
+      "PRI Line",
+      "MS 365",
+      "Endpoint Security",
+    ],
+    industry: "Insurance",
+    address:
+      "Lodha Excelus, 13th Floor, Apollo Mills Compound, N M Joshi Marg, Mahalaxmi, Mumbai 400011",
+  },
+  {
+    companyName: "ICICI Prudential Life Insurance",
+    area: "BKC, Mumbai",
+    services: ["Internet Leased Line", "SD-WAN", "Endpoint Security"],
+    industry: "Insurance",
+    address: "1089, Appasaheb Marathe Marg, Prabhadevi, Mumbai 400025",
+  },
+  {
+    companyName: "Mphasis Ltd (Mumbai)",
+    area: "Lower Parel, Mumbai",
+    services: ["MS 365", "Managed WiFi", "Endpoint Security"],
+    industry: "IT Services",
+    address:
+      "2nd Floor, Nirlon Knowledge Park, Western Express Highway, Goregaon East, Mumbai 400063",
+  },
+  {
+    companyName: "Lupin Ltd",
+    area: "Kalina, Mumbai",
+    services: ["Internet Leased Line", "MS 365", "Managed WiFi"],
+    industry: "Pharma",
+    address:
+      "Lupin Research Park, Survey No 46 A/47A, Village Nande, Mulshi Taluka, Pune 412115 (Mumbai HO: Kalina)",
+  },
+];
+
+// ─── Mumbai Banks Data ─────────────────────────────────────────────────────────
+const MUMBAI_BANKS: {
+  bankName: string;
+  area: string;
+  type: string;
+  headOffice: string;
+  phone: string;
+  website: string;
+}[] = [
+  {
+    bankName: "State Bank of India (Corporate Centre)",
+    area: "Nariman Point, Mumbai",
+    type: "Public Sector",
+    headOffice:
+      "State Bank Bhavan, Madame Cama Road, Nariman Point, Mumbai 400021",
+    phone: "022-22740841",
+    website: "www.sbi.co.in",
+  },
+  {
+    bankName: "HDFC Bank Ltd",
+    area: "Lower Parel, Mumbai",
+    type: "Private Sector",
+    headOffice:
+      "HDFC Bank House, Senapati Bapat Marg, Lower Parel, Mumbai 400013",
+    phone: "022-24983684",
+    website: "www.hdfcbank.com",
+  },
+  {
+    bankName: "ICICI Bank Ltd",
+    area: "BKC, Mumbai",
+    type: "Private Sector",
+    headOffice: "ICICI Bank Tower, Bandra Kurla Complex, Mumbai 400051",
+    phone: "022-26531414",
+    website: "www.icicibank.com",
+  },
+  {
+    bankName: "Axis Bank Ltd",
+    area: "Worli, Mumbai",
+    type: "Private Sector",
+    headOffice:
+      "Axis House, C-2 Wadia International Centre, Pandurang Budhkar Marg, Worli, Mumbai 400025",
+    phone: "022-24252525",
+    website: "www.axisbank.com",
+  },
+  {
+    bankName: "Kotak Mahindra Bank",
+    area: "BKC, Mumbai",
+    type: "Private Sector",
+    headOffice: "27BKC, C-27, G Block, BKC, Bandra East, Mumbai 400051",
+    phone: "022-61660001",
+    website: "www.kotak.com",
+  },
+  {
+    bankName: "Bank of Baroda (HO)",
+    area: "BKC, Mumbai",
+    type: "Public Sector",
+    headOffice:
+      "Baroda Corporate Centre, Plot No. C-26, G Block, BKC, Bandra East, Mumbai 400051",
+    phone: "022-66985000",
+    website: "www.bankofbaroda.in",
+  },
+  {
+    bankName: "IndusInd Bank Ltd",
+    area: "Lower Parel, Mumbai",
+    type: "Private Sector",
+    headOffice:
+      "8th Floor, Tower 1, One Indiabulls Centre, Jupiter Mills Compound, Senapati Bapat Marg, Mumbai 400013",
+    phone: "022-44066666",
+    website: "www.indusind.com",
+  },
+  {
+    bankName: "Yes Bank Ltd",
+    area: "Worli, Mumbai",
+    type: "Private Sector",
+    headOffice:
+      "YES BANK Tower, IFC 2, 15th Floor, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013",
+    phone: "022-33479567",
+    website: "www.yesbank.in",
+  },
+  {
+    bankName: "IDFC First Bank",
+    area: "BKC, Mumbai",
+    type: "Private Sector",
+    headOffice:
+      "Building No. 2, Nesco IT Park, WE Highway, Goregaon East, Mumbai 400063",
+    phone: "022-71920000",
+    website: "www.idfcfirstbank.com",
+  },
+  {
+    bankName: "Federal Bank Ltd (Mumbai RO)",
+    area: "Lower Parel, Mumbai",
+    type: "Private Sector",
+    headOffice:
+      "Tower A, 6th Floor, One Indiabulls Centre, Senapati Bapat Marg, Lower Parel, Mumbai 400013",
+    phone: "022-24990011",
+    website: "www.federalbank.co.in",
+  },
+  {
+    bankName: "Punjab National Bank (Mumbai ZO)",
+    area: "Fort, Mumbai",
+    type: "Public Sector",
+    headOffice: "PNB House, Sir P M Road, Fort, Mumbai 400001",
+    phone: "022-22614972",
+    website: "www.pnbindia.in",
+  },
+  {
+    bankName: "Canara Bank (Mumbai ZO)",
+    area: "Ballard Estate, Mumbai",
+    type: "Public Sector",
+    headOffice: "Maker Towers, Cuffe Parade, Mumbai 400005",
+    phone: "022-22830001",
+    website: "www.canarabank.com",
+  },
+  {
+    bankName: "Union Bank of India (HO)",
+    area: "Fort, Mumbai",
+    type: "Public Sector",
+    headOffice:
+      "Union Bank Bhavan, 239 Vidhan Bhavan Marg, Nariman Point, Mumbai 400021",
+    phone: "022-22026000",
+    website: "www.unionbankofindia.co.in",
+  },
+  {
+    bankName: "Bank of India (HO)",
+    area: "Fort, Mumbai",
+    type: "Public Sector",
+    headOffice: "Star House, C-5, G Block, BKC, Bandra East, Mumbai 400051",
+    phone: "022-40919191",
+    website: "www.bankofindia.co.in",
+  },
+  {
+    bankName: "Central Bank of India (HO)",
+    area: "Fort, Mumbai",
+    type: "Public Sector",
+    headOffice: "Chandermukhi, Nariman Point, Mumbai 400021",
+    phone: "022-22026427",
+    website: "www.centralbankofindia.co.in",
+  },
+  {
+    bankName: "RBL Bank Ltd (HO)",
+    area: "BKC, Mumbai",
+    type: "Private Sector",
+    headOffice:
+      "One IndiaBulls Centre, Tower 2B, 6th Floor, 841, Senapati Bapat Marg, Lower Parel, Mumbai 400013",
+    phone: "022-61156300",
+    website: "www.rblbank.com",
+  },
+  {
+    bankName: "DCB Bank Ltd (HO)",
+    area: "Andheri East, Mumbai",
+    type: "Private Sector",
+    headOffice:
+      "Peninsula Business Park, Tower A, 6th Floor, Senapati Bapat Marg, Lower Parel, Mumbai 400013",
+    phone: "022-66484000",
+    website: "www.dcbbank.com",
+  },
+  {
+    bankName: "Bandhan Bank (Mumbai RO)",
+    area: "BKC, Mumbai",
+    type: "Private Sector",
+    headOffice: "Plot No. C-9, G Block, BKC, Bandra East, Mumbai 400051",
+    phone: "033-40096609",
+    website: "www.bandhanbank.com",
+  },
+  {
+    bankName: "IDBI Bank Ltd (HO)",
+    area: "BKC, Mumbai",
+    type: "Public Sector (DFI)",
+    headOffice: "IDBI Tower, WTC Complex, Cuffe Parade, Colaba, Mumbai 400005",
+    phone: "022-66552000",
+    website: "www.idbi.com",
+  },
+  {
+    bankName: "Saraswat Co-operative Bank (HO)",
+    area: "Prabhadevi, Mumbai",
+    type: "Co-operative",
+    headOffice:
+      "Saraswat Bank Bhavan, Plot No. 953, Appasaheb Marathe Marg, Prabhadevi, Mumbai 400025",
+    phone: "022-24222770",
+    website: "www.saraswatbank.com",
+  },
+  {
+    bankName: "Abhyudaya Co-operative Bank",
+    area: "Nehru Nagar, Mumbai",
+    type: "Co-operative",
+    headOffice:
+      "Abhyudaya Bank Bhavan, Abhyudaya Nagar, Nehru Nagar, Kurla East, Mumbai 400024",
+    phone: "022-25264111",
+    website: "www.abhyudayabank.co.in",
+  },
+  {
+    bankName: "Maharashtra Bank (Bank of Maharashtra, Mumbai ZO)",
+    area: "Fort, Mumbai",
+    type: "Public Sector",
+    headOffice:
+      "Bank of Maharashtra, Lokmangal, 1501 Shivajinagar, Pune 411005 (Mumbai ZO: Fort)",
+    phone: "022-22671566",
+    website: "www.bankofmaharashtra.in",
+  },
+  {
+    bankName: "DBS Bank India (Mumbai HO)",
+    area: "Fort, Mumbai",
+    type: "Foreign Bank",
+    headOffice: "Fort House, 221 D N Road, Fort, Mumbai 400001",
+    phone: "022-66386666",
+    website: "www.dbs.com/in",
+  },
+  {
+    bankName: "Citibank India (Mumbai)",
+    area: "BKC, Mumbai",
+    type: "Foreign Bank",
+    headOffice:
+      "First International Financial Centre, G Block Plot C54 & 55, BKC, Mumbai 400051",
+    phone: "022-61756000",
+    website: "www.online.citibank.co.in",
+  },
+  {
+    bankName: "HSBC India (Mumbai HO)",
+    area: "Fort, Mumbai",
+    type: "Foreign Bank",
+    headOffice: "52-60 M G Road, Fort, Mumbai 400001",
+    phone: "022-22682121",
+    website: "www.hsbc.co.in",
+  },
+  {
+    bankName: "Standard Chartered Bank India (HO)",
+    area: "Colaba, Mumbai",
+    type: "Foreign Bank",
+    headOffice:
+      "Crescenzo, C-38/C-39, G Block, BKC, Bandra East, Mumbai 400051",
+    phone: "022-66015000",
+    website: "www.sc.com/in",
+  },
+  {
+    bankName: "Deutsche Bank India (Mumbai)",
+    area: "Fort, Mumbai",
+    type: "Foreign Bank",
+    headOffice: "Kodak House, 222 Dr D N Road, Fort, Mumbai 400001",
+    phone: "022-71801200",
+    website: "www.db.com/india",
+  },
+  {
+    bankName: "Barclays Bank India (Mumbai)",
+    area: "BKC, Mumbai",
+    type: "Foreign Bank",
+    headOffice:
+      "801/808 Ceejay House, Shivsagar Estate, Dr Annie Besant Road, Worli, Mumbai 400018",
+    phone: "022-67196000",
+    website: "www.barclays.in",
+  },
+  {
+    bankName: "IIFL Finance (Mumbai HO)",
+    area: "BKC, Mumbai",
+    type: "NBFC/Finance",
+    headOffice:
+      "IIFL House, Sun Infotech Park, Road No. 16V, Plot No. B-23, MIDC, Thane Industrial Area, Wagle Estate, Thane 400604",
+    phone: "022-40876000",
+    website: "www.iifl.com",
+  },
+  {
+    bankName: "Bajaj Finance Ltd (Mumbai)",
+    area: "Lower Parel, Mumbai",
+    type: "NBFC/Finance",
+    headOffice:
+      "Bajaj Auto Ltd Complex, Mumbai Pune Road, Akurdi, Pune 411035 (Mumbai: Lower Parel)",
+    phone: "020-71577151",
+    website: "www.bajajfinserv.in",
+  },
+];
+
+// ─── Tata IT Solutions Tab ────────────────────────────────────────────────────
+const SERVICE_COLORS: Record<string, string> = {
+  "Internet Leased Line": "bg-blue-100 text-blue-700 border-blue-200",
+  "PRI Line": "bg-purple-100 text-purple-700 border-purple-200",
+  "SD-WAN": "bg-green-100 text-green-700 border-green-200",
+  "MS 365": "bg-orange-100 text-orange-700 border-orange-200",
+  "Managed WiFi": "bg-teal-100 text-teal-700 border-teal-200",
+  "Endpoint Security": "bg-red-100 text-red-700 border-red-200",
+};
+
+const ALL_TATA_SERVICES = [
+  "Internet Leased Line",
+  "PRI Line",
+  "SD-WAN",
+  "MS 365",
+  "Managed WiFi",
+  "Endpoint Security",
+];
+
+function TataITUsersTab() {
+  const [search, setSearch] = useState("");
+  const [filterService, setFilterService] = useState("all");
+
+  const filtered = useMemo(() => {
+    let data = TATA_IT_USERS;
+    if (filterService !== "all")
+      data = data.filter((c) => c.services.includes(filterService));
+    const q = search.toLowerCase().trim();
+    if (q)
+      data = data.filter(
+        (c) =>
+          c.companyName.toLowerCase().includes(q) ||
+          c.area.toLowerCase().includes(q) ||
+          c.industry.toLowerCase().includes(q),
+      );
+    return data;
+  }, [search, filterService]);
+
+  const exportCSV = () => {
+    const header = [
+      "Company Name",
+      "Area",
+      "Industry",
+      "Services Used",
+      "Address",
+    ];
+    const rows = filtered.map((c) => [
+      `"${c.companyName}"`,
+      `"${c.area}"`,
+      c.industry,
+      `"${c.services.join(", ")}"`,
+      `"${c.address}"`,
+    ]);
+    const csv = [header, ...rows].map((r) => r.join(",")).join("\n");
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `tata-it-solution-users-${getTodayKey()}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+    toast.success(`Exported ${filtered.length} Tata IT Solution users to CSV`);
+  };
+
+  return (
+    <div className="space-y-5">
+      <div className="flex items-start gap-4 p-4 rounded-xl bg-[oklch(0.96_0.03_260)] dark:bg-[oklch(0.16_0.04_260)] border border-[oklch(0.86_0.05_260)] dark:border-[oklch(0.28_0.06_260)]">
+        <div className="h-11 w-11 rounded-xl bg-[oklch(0.50_0.22_260)] flex items-center justify-center shrink-0 shadow">
+          <Wifi className="h-5 w-5 text-white" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h2 className="font-display font-bold text-foreground text-base">
+            Companies Using Tata IT Solutions
+          </h2>
+          <p className="text-sm text-muted-foreground mt-0.5">
+            {TATA_IT_USERS.length} companies already using Internet Leased Line,
+            PRI Line, SD-WAN, MS 365, Managed WiFi & Endpoint Security
+          </p>
+        </div>
+        <div className="flex gap-2 shrink-0 flex-wrap justify-end">
+          <div className="text-center px-3 py-1.5 rounded-lg bg-white dark:bg-[oklch(0.22_0.03_260)] border border-[oklch(0.88_0.04_260)] dark:border-[oklch(0.32_0.05_260)]">
+            <div className="text-lg font-bold text-[oklch(0.40_0.20_260)]">
+              {TATA_IT_USERS.length}
+            </div>
+            <div className="text-[10px] text-muted-foreground">Total</div>
+          </div>
+          <div className="text-center px-3 py-1.5 rounded-lg bg-white dark:bg-[oklch(0.22_0.03_260)] border border-[oklch(0.88_0.04_260)] dark:border-[oklch(0.32_0.05_260)]">
+            <div className="text-lg font-bold text-[oklch(0.40_0.20_260)]">
+              {filtered.length}
+            </div>
+            <div className="text-[10px] text-muted-foreground">Filtered</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between">
+        <div className="flex flex-col sm:flex-row gap-2 flex-1">
+          <div className="relative flex-1 max-w-sm">
+            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+            <Input
+              placeholder="Search company, area, industry..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="pl-8 h-8 text-sm"
+              data-ocid="tata.search_input"
+            />
+            {search && (
+              <button
+                type="button"
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                onClick={() => setSearch("")}
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            )}
+          </div>
+          <Select value={filterService} onValueChange={setFilterService}>
+            <SelectTrigger
+              className="h-8 text-xs w-full sm:w-44"
+              data-ocid="tata.service.select"
+            >
+              <SelectValue placeholder="Filter by Service" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Services</SelectItem>
+              {ALL_TATA_SERVICES.map((s) => (
+                <SelectItem key={s} value={s}>
+                  {s}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={exportCSV}
+          className="h-8 text-xs gap-1.5"
+          data-ocid="tata.export.button"
+        >
+          <Download className="h-3.5 w-3.5" />
+          Export CSV
+        </Button>
+      </div>
+
+      <div className="rounded-xl border border-border overflow-hidden">
+        <Table data-ocid="tata.table">
+          <TableHeader>
+            <TableRow className="bg-muted/40">
+              <TableHead className="w-8 text-[11px] font-semibold text-muted-foreground">
+                #
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground">
+                Company Name
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground hidden md:table-cell">
+                Industry
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground hidden sm:table-cell">
+                Area
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground">
+                Services Used
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground hidden lg:table-cell">
+                Address
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {filtered.length === 0 ? (
+              <TableRow>
+                <TableCell
+                  colSpan={6}
+                  className="text-center py-12 text-muted-foreground text-sm"
+                  data-ocid="tata.empty_state"
+                >
+                  No companies found
+                </TableCell>
+              </TableRow>
+            ) : (
+              filtered.map((company, idx) => (
+                <TableRow
+                  key={company.companyName}
+                  className="hover:bg-muted/30 transition-colors"
+                  data-ocid={`tata.item.${idx + 1}`}
+                >
+                  <TableCell className="text-[11px] text-muted-foreground font-mono w-8">
+                    {idx + 1}
+                  </TableCell>
+                  <TableCell>
+                    <div className="flex items-center gap-2">
+                      <div className="h-7 w-7 rounded-lg bg-[oklch(0.93_0.04_260)] flex items-center justify-center shrink-0">
+                        <Building2 className="h-3.5 w-3.5 text-[oklch(0.45_0.20_260)]" />
+                      </div>
+                      <span className="text-sm font-semibold text-foreground">
+                        {company.companyName}
+                      </span>
+                    </div>
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell">
+                    <span className="text-xs text-muted-foreground">
+                      {company.industry}
+                    </span>
+                  </TableCell>
+                  <TableCell className="hidden sm:table-cell">
+                    <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                      <MapPin className="h-3 w-3" />
+                      {company.area}
+                    </span>
+                  </TableCell>
+                  <TableCell>
+                    <div className="flex flex-wrap gap-1">
+                      {company.services.map((s) => (
+                        <span
+                          key={s}
+                          className={`inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 rounded border ${SERVICE_COLORS[s] ?? "bg-gray-100 text-gray-700 border-gray-200"}`}
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </TableCell>
+                  <TableCell className="hidden lg:table-cell">
+                    <span className="text-xs text-muted-foreground">
+                      {company.address}
+                    </span>
+                  </TableCell>
+                </TableRow>
+              ))
+            )}
+          </TableBody>
+        </Table>
+      </div>
+      {filtered.length > 0 && (
+        <p className="text-[11px] text-muted-foreground text-center">
+          Showing {filtered.length} companies already using Tata IT solutions ·
+          Ideal upsell/cross-sell targets
+        </p>
+      )}
+    </div>
+  );
+}
+
+// ─── Mumbai Banks Tab ─────────────────────────────────────────────────────────
+const BANK_TYPE_COLORS: Record<string, string> = {
+  "Public Sector": "bg-blue-100 text-blue-700 border-blue-200",
+  "Private Sector": "bg-green-100 text-green-700 border-green-200",
+  "Foreign Bank": "bg-purple-100 text-purple-700 border-purple-200",
+  "Co-operative": "bg-orange-100 text-orange-700 border-orange-200",
+  "NBFC/Finance": "bg-red-100 text-red-700 border-red-200",
+  "Public Sector (DFI)": "bg-teal-100 text-teal-700 border-teal-200",
+};
+
+function MumbaiBanksTab() {
+  const [search, setSearch] = useState("");
+  const [filterType, setFilterType] = useState("all");
+
+  const filtered = useMemo(() => {
+    let data = MUMBAI_BANKS;
+    if (filterType !== "all") data = data.filter((b) => b.type === filterType);
+    const q = search.toLowerCase().trim();
+    if (q)
+      data = data.filter(
+        (b) =>
+          b.bankName.toLowerCase().includes(q) ||
+          b.area.toLowerCase().includes(q) ||
+          b.type.toLowerCase().includes(q),
+      );
+    return data;
+  }, [search, filterType]);
+
+  const exportCSV = () => {
+    const header = [
+      "Bank Name",
+      "Type",
+      "Area",
+      "Head Office Address",
+      "Phone",
+      "Website",
+    ];
+    const rows = filtered.map((b) => [
+      `"${b.bankName}"`,
+      `"${b.type}"`,
+      `"${b.area}"`,
+      `"${b.headOffice}"`,
+      b.phone,
+      b.website,
+    ]);
+    const csv = [header, ...rows].map((r) => r.join(",")).join("\n");
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `mumbai-banks-${getTodayKey()}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+    toast.success(`Exported ${filtered.length} Mumbai banks to CSV`);
+  };
+
+  const bankTypes = [...new Set(MUMBAI_BANKS.map((b) => b.type))];
+
+  return (
+    <div className="space-y-5">
+      <div className="flex items-start gap-4 p-4 rounded-xl bg-[oklch(0.96_0.03_145)] dark:bg-[oklch(0.16_0.04_145)] border border-[oklch(0.86_0.05_145)] dark:border-[oklch(0.28_0.06_145)]">
+        <div className="h-11 w-11 rounded-xl bg-[oklch(0.50_0.22_145)] flex items-center justify-center shrink-0 shadow">
+          <Landmark className="h-5 w-5 text-white" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h2 className="font-display font-bold text-foreground text-base">
+            Mumbai Banks Directory
+          </h2>
+          <p className="text-sm text-muted-foreground mt-0.5">
+            {MUMBAI_BANKS.length} banks in Mumbai — Public, Private, Foreign,
+            Co-operative with verified addresses &amp; contacts
+          </p>
+        </div>
+        <div className="flex gap-2 shrink-0 flex-wrap justify-end">
+          <div className="text-center px-3 py-1.5 rounded-lg bg-white dark:bg-[oklch(0.22_0.03_145)] border border-[oklch(0.88_0.04_145)] dark:border-[oklch(0.32_0.05_145)]">
+            <div className="text-lg font-bold text-[oklch(0.40_0.20_145)]">
+              {MUMBAI_BANKS.length}
+            </div>
+            <div className="text-[10px] text-muted-foreground">Total</div>
+          </div>
+          <div className="text-center px-3 py-1.5 rounded-lg bg-white dark:bg-[oklch(0.22_0.03_145)] border border-[oklch(0.88_0.04_145)] dark:border-[oklch(0.32_0.05_145)]">
+            <div className="text-lg font-bold text-[oklch(0.40_0.20_145)]">
+              {filtered.length}
+            </div>
+            <div className="text-[10px] text-muted-foreground">Filtered</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between">
+        <div className="flex flex-col sm:flex-row gap-2 flex-1">
+          <div className="relative flex-1 max-w-sm">
+            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+            <Input
+              placeholder="Search bank name, area, type..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="pl-8 h-8 text-sm"
+              data-ocid="banks.search_input"
+            />
+            {search && (
+              <button
+                type="button"
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                onClick={() => setSearch("")}
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            )}
+          </div>
+          <Select value={filterType} onValueChange={setFilterType}>
+            <SelectTrigger
+              className="h-8 text-xs w-full sm:w-44"
+              data-ocid="banks.type.select"
+            >
+              <SelectValue placeholder="Filter by Type" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Bank Types</SelectItem>
+              {bankTypes.map((t) => (
+                <SelectItem key={t} value={t}>
+                  {t}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={exportCSV}
+          className="h-8 text-xs gap-1.5"
+          data-ocid="banks.export.button"
+        >
+          <Download className="h-3.5 w-3.5" />
+          Export CSV
+        </Button>
+      </div>
+
+      <div className="rounded-xl border border-border overflow-hidden">
+        <Table data-ocid="banks.table">
+          <TableHeader>
+            <TableRow className="bg-muted/40">
+              <TableHead className="w-8 text-[11px] font-semibold text-muted-foreground">
+                #
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground">
+                Bank Name
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground hidden sm:table-cell">
+                Type
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground hidden md:table-cell">
+                Area
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground hidden md:table-cell">
+                Phone
+              </TableHead>
+              <TableHead className="text-[11px] font-semibold text-muted-foreground hidden lg:table-cell">
+                Head Office Address
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {filtered.length === 0 ? (
+              <TableRow>
+                <TableCell
+                  colSpan={6}
+                  className="text-center py-12 text-muted-foreground text-sm"
+                  data-ocid="banks.empty_state"
+                >
+                  No banks found
+                </TableCell>
+              </TableRow>
+            ) : (
+              filtered.map((bank, idx) => (
+                <TableRow
+                  key={bank.bankName}
+                  className="hover:bg-muted/30 transition-colors"
+                  data-ocid={`banks.item.${idx + 1}`}
+                >
+                  <TableCell className="text-[11px] text-muted-foreground font-mono w-8">
+                    {idx + 1}
+                  </TableCell>
+                  <TableCell>
+                    <div className="flex items-center gap-2">
+                      <div className="h-7 w-7 rounded-lg bg-[oklch(0.93_0.04_145)] flex items-center justify-center shrink-0">
+                        <Landmark className="h-3.5 w-3.5 text-[oklch(0.42_0.20_145)]" />
+                      </div>
+                      <div>
+                        <span className="text-sm font-semibold text-foreground">
+                          {bank.bankName}
+                        </span>
+                        <div className="text-[10px] text-muted-foreground">
+                          {bank.website}
+                        </div>
+                      </div>
+                    </div>
+                  </TableCell>
+                  <TableCell className="hidden sm:table-cell">
+                    <span
+                      className={`inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 rounded border ${BANK_TYPE_COLORS[bank.type] ?? "bg-gray-100 text-gray-700 border-gray-200"}`}
+                    >
+                      {bank.type}
+                    </span>
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell">
+                    <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                      <MapPin className="h-3 w-3" />
+                      {bank.area}
+                    </span>
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell">
+                    <span className="text-xs font-mono text-foreground">
+                      {bank.phone}
+                    </span>
+                  </TableCell>
+                  <TableCell className="hidden lg:table-cell">
+                    <span className="text-xs text-muted-foreground">
+                      {bank.headOffice}
+                    </span>
+                  </TableCell>
+                </TableRow>
+              ))
+            )}
+          </TableBody>
+        </Table>
+      </div>
+      {filtered.length > 0 && (
+        <p className="text-[11px] text-muted-foreground text-center">
+          Showing {filtered.length} Mumbai banks · Verified head office
+          addresses &amp; direct contact numbers
+        </p>
+      )}
+    </div>
+  );
+}
+
 function MumbaiITTab() {
   const [search, setSearch] = useState("");
 
@@ -2818,6 +3848,28 @@ export default function ITLeadManager() {
               64
             </span>
           </TabsTrigger>
+          <TabsTrigger
+            value="tata"
+            className="text-xs gap-1.5 h-7"
+            data-ocid="nav.tata.tab"
+          >
+            <Wifi className="h-3.5 w-3.5" />
+            Tata IT Users
+            <span className="ml-1 text-[10px] bg-[oklch(0.55_0.22_260)]/15 text-[oklch(0.40_0.18_260)] px-1.5 py-0.5 rounded font-bold">
+              30
+            </span>
+          </TabsTrigger>
+          <TabsTrigger
+            value="banks"
+            className="text-xs gap-1.5 h-7"
+            data-ocid="nav.banks.tab"
+          >
+            <Landmark className="h-3.5 w-3.5" />
+            Mumbai Banks
+            <span className="ml-1 text-[10px] bg-[oklch(0.55_0.22_145)]/15 text-[oklch(0.40_0.18_145)] px-1.5 py-0.5 rounded font-bold">
+              30
+            </span>
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="dashboard" className="mt-5">
@@ -2850,6 +3902,14 @@ export default function ITLeadManager() {
 
         <TabsContent value="mumbai" className="mt-5">
           <MumbaiITTab />
+        </TabsContent>
+
+        <TabsContent value="tata" className="mt-5">
+          <TataITUsersTab />
+        </TabsContent>
+
+        <TabsContent value="banks" className="mt-5">
+          <MumbaiBanksTab />
         </TabsContent>
       </Tabs>
     </div>
